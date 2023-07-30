@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><center>
+<form action="{% url 'add' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+  Product Name: <input type = "text" name="pname" required><br/>
+  Product Price: <input type = "text" name="pprice" required><br/>
+  Product Description: <input type = "text" name="pdesc" required><br/>
+  Product Image <input type="file" name="pimage" required><br/>
+    <input type="submit" name="submit" value="upload">
+
+</form></center>
+</body>
+</html>

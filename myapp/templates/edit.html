@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/update/{{data.id}}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+  product name: <input type = "text" name="pname" value="{{ data.name }}" required><br/>
+  product price: <input type = "text" name="pprice" value="{{ data.price }}" required><br/>
+  product description: <input type = "text" name="pdesc"  value="{{ data.info }}" required><br/>
+  product image <input type="file"  name="pimage" required><br/>
+    <img src="../media/{{ data.img}}" width="100px" height="100px">
+
+    <input type="submit" name="submit" value="upload">
+
+</form>
+</body>
+</html>

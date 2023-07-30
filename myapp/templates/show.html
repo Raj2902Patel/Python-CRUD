@@ -1,0 +1,46 @@
+<html>
+    {% load static %}
+    <head>
+        <title>Show Page</title>
+    </head>
+
+    <body>
+        <table align="center" border="2">
+            <thead>
+                <tr>
+                    <th align="center">Product Id</th>
+                    <th align="center">Product Name</th>
+                    <th align="center">Product Price</th>
+                    <th align="center">Product Info</th>
+                    <th align="center">Product Image</th>
+                    <th align="center">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for data in products %}
+                    <tr>
+                        <td align="center">{{ data.id }}</td>
+                        <td align="center">{{ data.name }}</td>
+                        <td align="center">{{ data.price }}</td>
+                        <td align="center">{{ data.info }}</td>
+                        <td align="center">
+                            <img src="/media/{{ data.img }}" width="100px" height="100px">
+                        </td>
+
+                        <td>
+                            <a href="/edit/{{ data.id }}">
+                                <img src="https://img.icons8.com/?size=512&id=81427&format=png" heght="30px" width="30px">
+                            </a>
+                            
+
+                            <a href="/delete/{{ data.id }}">
+                                <img src="https://img.icons8.com/?size=512&id=107448&format=png" height="30px" width="30px">
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
